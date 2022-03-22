@@ -10,33 +10,36 @@
       </ul>
     </div>
   <% end %>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <div>
+        <%= form.label :meal_type, style: "display: block" %>
+        <%= form.text_field :meal_type, class: "form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :meal_type, style: "display: block" %>
-    <%= form.text_field :meal_type %>
-  </div>
+      <div>
+        <%= form.label :calories, style: "display: block" %>
+        <%= form.number_field :calories, class: "form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :calories, style: "display: block" %>
-    <%= form.number_field :calories %>
-  </div>
+      <div>
+        <%= form.label :proteins, style: "display: block" %>
+        <%= form.number_field :proteins, class: "form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :proteins, style: "display: block" %>
-    <%= form.number_field :proteins %>
-  </div>
+      <div>
+        <%= form.label :carbohydrates, style: "display: block" %>
+        <%= form.number_field :carbohydrates, class: "form-control" %>
+      </div>
 
-  <div>
-    <%= form.label :carbohydrates, style: "display: block" %>
-    <%= form.number_field :carbohydrates %>
-  </div>
-
-  <div>
-    <%= form.label :fats, style: "display: block" %>
-    <%= form.number_field :fats %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+      <div>
+        <%= form.label :fats, style: "display: block" %>
+        <%= form.number_field :fats, class: "form-control" %>
+      </div>
+      <div class="d-flex justify-content-center pt-3">
+        <button type="submit" class="btn btn-success mx-2">Submit</button>
+        <%= link_to "Back", root_path , class: "btn btn-secondary" %>
+      </div>
+    </div>
   </div>
 <% end %>

@@ -1,7 +1,9 @@
-<h1>Entries</h1>
+<h1 class="text-center mt-5">Entries</h1>
 
-<div id="entries">
+<div class="row ">
   <% @entries.each do |entry| %>
-    <%= render entry %>
+    <div class="col-sm my-3">
+      <%= render entry %>
+    </div>
   <% end %>
 </div>
