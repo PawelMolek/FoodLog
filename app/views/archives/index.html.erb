@@ -1,0 +1,23 @@
+<h1 class="text-center mt-5">Entries</h1>
+
+<div class="row ">
+  <% @entries.each do |day, entries| %>
+    <div class="col-sm mt-3">
+      <h3>Entries for <%= day %></h3>
+      <% entries.each do |entry| %>
+        <%= link_to entry_path(entry), class:"text-muted" do %>
+          <div class="card my-2">
+            <div class="card-body">
+              <%= entry.meal_type %>
+              <br/><br/>
+              <%= entry.calories %> calories,
+              <%= entry.proteins %> proteins,
+              <%= entry.carbohydrates %> carbohydrates,
+              <%= entry.fats %> fats,
+        <% end %>
+        </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
