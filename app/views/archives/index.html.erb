@@ -1,15 +1,32 @@
-<h1 class="text-center mt-5">Entries</h1>
-
-<div class="row ">
+<div class="container">
   <% @entries.each do |day, entries| %>
+    <h3 class="text-center my-3">Entries for <%= day %></h3>
+    <div class="d-flex container text-center w-50 border border-1 pt-3">
+      <div class="container">
+        <p class="">Calories</p>
+        <p class="fw-bold"> <%= entries.pluck(:calories).sum %></p>
+      </div>
+      <div class="container">
+        <p class="">Proteins</p>
+        <p class="fw-bold"> <%= entries.pluck(:proteins).sum %>g</p>
+      </div>
+      <div class="container">
+        <p class="">Carbohydrates</p>
+        <p class="fw-bold"> <%= entries.pluck(:carbohydrates).sum %>g</p>
+      </div>
+      <div class="container">
+        <p class="">Fats</p>
+        <p class="fw-bold"> <%= entries.pluck(:fats).sum %>g</p>
+      </div>
+    </div>
+
+
     <div class="col-sm mt-3">
-      <h3>Entries for <%= day %></h3>
       <% entries.each do |entry| %>
-        <%= link_to entry_path(entry), class:"text-muted" do %>
+        <%= link_to entry_path(entry), class: "text-muted" do %>
           <div class="card my-2">
             <div class="card-body">
-              <%= entry.meal_type %>
-              <br/><br/>
+              <p class="fw-bold"> <%= entry.meal_type %></p>
               <%= entry.calories %> calories,
               <%= entry.proteins %> proteins,
               <%= entry.carbohydrates %> carbohydrates,
